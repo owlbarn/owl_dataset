@@ -31,6 +31,8 @@ You can get MNIST data via these `Owl` functions:
   `load_mnist_train_data_arr`, but it returns the test set, so the example size
   is 10, 000 instead of 60, 000.
 
+- `Dataset.draw_samples x y n` draws `n` random examples from images matrix `x` and lable matrix `y`.  
+
 ## CIFAR-10
 The CIFAR-10 dataset consists of 60000 32 x 32 colour images in 10 classes,
 with 6000 images per class. There are 50000 training images and 10000 test
@@ -40,7 +42,7 @@ Due to the limit of file size on Github, the training set is cut into 5 smaller
 batch. You can get CIFAR-10 data using `Owl`:
 
 - `Dataset.load_cifar_train_data batch`: return a triplet `x, y, y'`.
-  + The input `batch` can range from 1 to 5, indicating which training set batch to choose.
+  + The input paramter `batch` can range from 1 to 5, indicating which training set batch to choose.
   + `x` is an [10000, 32, 32, 3] ndarry (`Owl_dense_ndarray.S.arr`). The final
   dimension indicates color channels (first Red, then Green, finally Blue).
   + Similar to MNIST, `y` is an 10000 x 1 label matrix, each number representing
@@ -49,5 +51,7 @@ batch. You can get CIFAR-10 data using `Owl`:
 
 - `Dataset.load_cifar_test_data ()`: similar to `load_cifar_train_data`, only
   that it loads test data.
+
+- `Dataset.draw_samples_cifar x y n` draws `n` random examples from images ndarray `x` and lable matrix `y`.
 
 Note that all elements in the loaded matrices and ndarrays are of `float32` format.

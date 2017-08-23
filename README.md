@@ -5,7 +5,7 @@ Neural Network module of [Owl](https://github.com/ryanrhymes/owl).
 Currently it mainly includes [MNIST](http://yann.lecun.com/exdb/mnist/) and
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html).
 
-You can get all these data in `Owl` by excuting: `Dataset.download_all ()`.
+You can get all these data in `Owl` by executing: `Dataset.download_all ()`.
 The downloaded data are stored in the home directory, for example,  `~/.owl/dataset` on Linux.
 
 ## MNIST
@@ -25,8 +25,7 @@ You can get MNIST data via these `Owl` functions:
   Similar to `load_mnist_train_data`, only that it returns the test set, so
   the example size is 10, 000 instead of 60, 000.
 
-- `Dataset.load_mnist_train_data_arr ()`: similar to `load_mnist_train_data`,   
-but returns `x` as [60000,28,28,1] ndarray
+- `Dataset.load_mnist_train_data_arr ()`: similar to `load_mnist_train_data`,   but returns `x` as [60000,28,28,1] ndarray
 
 - `Dataset.load_mnist_test_data_arr ()`: similar to
   `load_mnist_train_data_arr`, but it returns the test set, so the example size
@@ -43,7 +42,7 @@ batch. You can get CIFAR-10 data using `Owl`:
 - `Dataset.load_cifar_train_data batch`: return a triplet `x, y, y'`.
   + The input `batch` can range from 1 to 5, indicating which training set batch to choose.
   + `x` is an [10000, 32, 32, 3] ndarry (`Owl_dense_ndarray.S.arr`). The final
-  dimension indicats color channels (first Red, then Green, finally Blue).
+  dimension indicates color channels (first Red, then Green, finally Blue).
   + Similar to MNIST, `y` is an 10000 x 1 label matrix, each number representing
   an image class.
   + `y'` is the corresponding 10000 x 10 one-hot label matrix.  

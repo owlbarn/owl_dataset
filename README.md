@@ -16,10 +16,10 @@ and a test set of 10,000 examples. Each example is of size 28 x 28.
 You can get MNIST data via these `Owl` functions:
 
 - `Dataset.load_mnist_train_data ()`: returns a triplet `x, y, y'`.
-  + `x` is a 60000 x 784 matrix (`Owl_dense_matrix.S.mat`) where each row represents a 28 x 28 image.
-  + `y` is a 60000 x 1 label matrix. Each row is an integer ranging from 0 to 9,
+  + `x` is a [60000, 784] ndarray (`Owl_dense_ndarray.S.mat`) where each row represents a [28, 28] image.
+  + `y` is a [60000, 1] label ndarray. Each row is an integer ranging from 0 to 9,
   indicating the digit on each image.
-  + `y'` is a 60000 x 10 label matrix. Each one-hot row vector corresponds to
+  + `y'` is a [60000, 10] label ndarray. Each one-hot row vector corresponds to
   one label.
 
 - `Dataset.load_mnist_test_data ()`: returns a triplet.
@@ -32,7 +32,7 @@ You can get MNIST data via these `Owl` functions:
   `load_mnist_train_data_arr`, but it returns the test set, so the example size
   is 10, 000 instead of 60, 000.
 
-- `Dataset.draw_samples x y n` draws `n` random examples from images matrix `x` and lable matrix `y`.  
+- `Dataset.draw_samples x y n` draws `n` random examples from images ndarray `x` and lable ndarray `y`.  
 
 ## CIFAR-10
 The CIFAR-10 dataset consists of 60,000 32 x 32 colour images in 10 classes,
@@ -44,15 +44,15 @@ batch. You can get CIFAR-10 data using `Owl`:
 
 - `Dataset.load_cifar_train_data batch`: returns a triplet `x, y, y'`.
   + The input paramter `batch` can range from 1 to 5, indicating which training set batch to choose.
-  + `x` is an [10000, 32, 32, 3] ndarry (`Owl_dense_ndarray.S.arr`). The last
+  + `x` is an [10000, 32, 32, 3] ndarray (`Owl_dense_ndarray.S.arr`). The last
   dimension indicates color channels (first Red, then Green, finally Blue).
-  + `y` is an 10000 x 1 label matrix, each number representing
+  + `y` is an [10000, 1] label ndarray, each number representing
   an image class.
-  + `y'` is the corresponding 10000 x 10 one-hot label matrix.  
+  + `y'` is the corresponding [10000, 10] one-hot label ndarray.  
 
 - `Dataset.load_cifar_test_data ()`: similar to `load_cifar_train_data`, only
   that it loads test data.
 
-- `Dataset.draw_samples_cifar x y n` draws `n` random examples from images ndarray `x` and lable matrix `y`.
+- `Dataset.draw_samples_cifar x y n` draws `n` random examples from images ndarray `x` and lable ndarray `y`.
 
 Note that all elements in the loaded matrices and ndarrays are of `float32` format.
